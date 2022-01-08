@@ -1,0 +1,1114 @@
+{
+  "swagger": "2.0",
+  "basePath": "/",
+  "paths": {
+    "/orders/": {
+      "put": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        },
+        "summary": "Alle Bestellungen aktualisieren",
+        "operationId": "update_order",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "orders"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Order"
+              }
+            }
+          }
+        },
+        "summary": "Alle Bestellungen auflisten",
+        "operationId": "list_orders",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "orders"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        },
+        "summary": "Alle Bestellungen loeschen",
+        "operationId": "delete_order",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/orders/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "description": "The order identifier",
+          "name": "id",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          }
+        },
+        "summary": "Bestellung mit Id=<id> aktualisieren",
+        "operationId": "update_order",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "orders"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          }
+        },
+        "summary": "Bestellung mit Id=<id> anzeigen",
+        "operationId": "get_order",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "orders"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Order deleted"
+          },
+          "404": {
+            "description": "Order not found"
+          }
+        },
+        "summary": "Bestellung mit Id=<id> loeschen",
+        "operationId": "delete_order",
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/products/": {
+      "put": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        },
+        "summary": "Alle Produkte aktualisieren",
+        "operationId": "update_product",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "products"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          }
+        },
+        "summary": "Alle Produkte auflisten",
+        "operationId": "list_products",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "products"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        },
+        "summary": "Alle Produkte loeschen",
+        "operationId": "delete_product",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "products"
+        ]
+      }
+    },
+    "/products/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "description": "The product identifier",
+          "name": "id",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        },
+        "summary": "Produkt mit Id=<id> aktualisieren",
+        "operationId": "update_product",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "products"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        },
+        "summary": "Produkt mit Id=<id> anzeigen",
+        "operationId": "get_product",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "products"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Product deleted"
+          },
+          "404": {
+            "description": "Product not found"
+          }
+        },
+        "summary": "Produkt mit Id=<id> loeschen",
+        "operationId": "delete_product",
+        "tags": [
+          "products"
+        ]
+      }
+    },
+    "/questions/": {
+      "put": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        },
+        "summary": "Alle Fragen aktualisieren",
+        "operationId": "update_question",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "questions"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          }
+        },
+        "summary": "Alle Fragen auflisten",
+        "operationId": "list_questions",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "questions"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        },
+        "summary": "Alle Fragen loeschen",
+        "operationId": "delete_question",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/questions/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "description": "The question identifier",
+          "name": "id",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          },
+          "404": {
+            "description": "Question not found"
+          }
+        },
+        "summary": "Frage mit Id=<id> aktualisieren",
+        "operationId": "update_question",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "questions"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Question"
+            }
+          },
+          "404": {
+            "description": "Question not found"
+          }
+        },
+        "summary": "Frage mit Id=<id> anzeigen",
+        "operationId": "get_question",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "questions"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Question deleted"
+          },
+          "404": {
+            "description": "Question not found"
+          }
+        },
+        "summary": "Frage mit Id=<id> loeschen",
+        "operationId": "delete_question",
+        "tags": [
+          "questions"
+        ]
+      }
+    },
+    "/reviews/": {
+      "put": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        },
+        "summary": "Alle Bewertungen aktualisieren",
+        "operationId": "update_review",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "reviews"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Review"
+              }
+            }
+          }
+        },
+        "summary": "Alle Bewertungen auflisten",
+        "operationId": "list_reviews",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "reviews"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          }
+        },
+        "summary": "Alle Bewertungen loeschen",
+        "operationId": "delete_review",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "reviews"
+        ]
+      }
+    },
+    "/reviews/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "description": "The review identifier",
+          "name": "id",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          "404": {
+            "description": "Review not found"
+          }
+        },
+        "summary": "Bewertung mit Id=<id> aktualisieren",
+        "operationId": "update_review",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "reviews"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Review"
+            }
+          },
+          "404": {
+            "description": "Review not found"
+          }
+        },
+        "summary": "Bewertung mit Id=<id> anzeigen",
+        "operationId": "get_review",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "reviews"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "Review deleted"
+          },
+          "404": {
+            "description": "Review not found"
+          }
+        },
+        "summary": "Bewertung mit Id=<id> loeschen",
+        "operationId": "delete_review",
+        "tags": [
+          "reviews"
+        ]
+      }
+    },
+    "/users/": {
+      "put": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "summary": "Alle Nutzer aktualisieren",
+        "operationId": "update_user",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "summary": "Alle Nutzer auflisten",
+        "operationId": "list_users",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "summary": "Alle Nutzer loeschen",
+        "operationId": "delete_user",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      }
+    },
+    "/users/{id}": {
+      "parameters": [
+        {
+          "in": "path",
+          "description": "The user identifier",
+          "name": "id",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        },
+        "summary": "Nutzer mit Id=<id> aktualisieren",
+        "operationId": "update_user",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      },
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        },
+        "summary": "Nutzer mit Id=<id> anzeigen",
+        "operationId": "get_user",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "users"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "User deleted"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        },
+        "summary": "Nutzer mit Id=<id> loeschen",
+        "operationId": "delete_user",
+        "tags": [
+          "users"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "RestFul API",
+    "version": "1.0",
+    "description": "Christopher Epp - Flask - Swagger"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "users",
+      "description": "Stammdaten der Kunden"
+    },
+    {
+      "name": "products",
+      "description": "Produktdaten"
+    },
+    {
+      "name": "questions",
+      "description": "Kontaktformular"
+    },
+    {
+      "name": "reviews",
+      "description": "Rezensiondaten"
+    },
+    {
+      "name": "orders",
+      "description": "Bestellungen"
+    }
+  ],
+  "definitions": {
+    "User": {
+      "required": [
+        "address",
+        "email",
+        "firstname",
+        "lastname",
+        "password"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The user unique identifier"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "Vorname"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "Nachname"
+        },
+        "email": {
+          "type": "string",
+          "description": "E-Mail Adresse"
+        },
+        "address": {
+          "type": "string",
+          "description": "Anschrift"
+        },
+        "password": {
+          "type": "string",
+          "description": "Passwort"
+        }
+      },
+      "type": "object"
+    },
+    "Product": {
+      "required": [
+        "brand",
+        "name",
+        "newprice",
+        "oldprice"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The user unique identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Titel"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Marke"
+        },
+        "newprice": {
+          "type": "string",
+          "description": "Aktionspreis"
+        },
+        "oldprice": {
+          "type": "string",
+          "description": "Preis"
+        }
+      },
+      "type": "object"
+    },
+    "Question": {
+      "required": [
+        "customerid",
+        "description",
+        "email",
+        "firstname",
+        "lastname",
+        "subject"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The user unique identifier"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "Vorname"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "Nachname"
+        },
+        "email": {
+          "type": "string",
+          "description": "E-Mail Adresse"
+        },
+        "subject": {
+          "type": "string",
+          "description": "Betreff"
+        },
+        "customerid": {
+          "type": "string",
+          "description": "Kundennummer"
+        },
+        "description": {
+          "type": "string",
+          "description": "Beschreibung"
+        }
+      },
+      "type": "object"
+    },
+    "Review": {
+      "required": [
+        "publisher",
+        "starrating",
+        "text"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The user unique identifier"
+        },
+        "publisher": {
+          "type": "string",
+          "description": "Publiziert von"
+        },
+        "starrating": {
+          "type": "string",
+          "description": "Bewertung"
+        },
+        "text": {
+          "type": "string",
+          "description": "Rezension"
+        }
+      },
+      "type": "object"
+    },
+    "Order": {
+      "required": [
+        "date",
+        "payment",
+        "total"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The user unique identifier"
+        },
+        "date": {
+          "type": "string",
+          "description": "Datum"
+        },
+        "payment": {
+          "type": "string",
+          "description": "Bezahlmethode"
+        },
+        "total": {
+          "type": "string",
+          "description": "Summe"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "responses": {
+    "ParseError": {
+      "description": "When a mask can't be parsed"
+    },
+    "MaskError": {
+      "description": "When any error occurs on mask"
+    }
+  }
+}
